@@ -29,7 +29,6 @@ intents:
 - handoff:
     triggers: utter_greet
 - help
-
 entities:
 - amount-of-money
 - payment_amount
@@ -44,54 +43,78 @@ entities:
 slots:
   PERSON:
     type: unfeaturized
+    influence_conversation: false
   account_balance:
     type: unfeaturized
+    influence_conversation: false
   amount_of_money:
     type: unfeaturized
+    influence_conversation: false
   amount_transferred:
     type: unfeaturized
     initial_value: 0
+    influence_conversation: false
   confirm:
     type: unfeaturized
+    influence_conversation: false
   credit_card:
     type: unfeaturized
+    influence_conversation: false
   credit_card_balance:
     type: unfeaturized
+    influence_conversation: false
   currency:
     type: unfeaturized
+    influence_conversation: false
   end_time:
     type: unfeaturized
+    influence_conversation: false
   end_time_formatted:
     type: unfeaturized
+    influence_conversation: false
   grain:
     type: unfeaturized
+    influence_conversation: false
   known_recipients:
     type: unfeaturized
+    influence_conversation: false
   payment_amount:
     type: unfeaturized
+    influence_conversation: false
   payment_amount_type:
     type: unfeaturized
     initial_value: ''
+    influence_conversation: false
   requested_slot:
     type: unfeaturized
+    influence_conversation: false
   search_type:
     type: unfeaturized
+    influence_conversation: false
   start_time:
     type: unfeaturized
+    influence_conversation: false
   start_time_formatted:
     type: unfeaturized
+    influence_conversation: false
   time:
     type: unfeaturized
+    influence_conversation: false
   time_formatted:
     type: unfeaturized
+    influence_conversation: false
   transaction_history:
     type: unfeaturized
+    influence_conversation: false
   vendor_list:
     type: unfeaturized
+    influence_conversation: false
   vendor_name:
     type: unfeaturized
+    influence_conversation: false
   handoff_to:
     type: unfeaturized
+    influence_conversation: false
 responses:
   utter_ask_transfer_form_amount_of_money:
   - text: How much money do you want to transfer?
@@ -194,18 +217,15 @@ responses:
   utter_handoff:
   - text: Alright, I'll try to transfer you.
   utter_wouldve_handed_off:
-  - text: If you were talking to me via chatroom, I would have handed you off to {handoffhost}. 
+  - text: If you were talking to me via chatroom, I would have handed you off to {handoffhost}.
   utter_no_handoff:
   - text: Since you haven't configured a host to hand off to, I can't send you anywhere!
   utter_ask_whatelse:
   - text: What else can I help you with?
   utter_help:
-    - text: "I can help you with your financial accounts.
-        \nYou can ask me things like:
-        \n- What's my account balance?
-        \n- Pay off my credit card
-        \n- What did I spend at Target last month?
-        \n- I need to transfer money"
+  - text: "I can help you with your financial accounts. \nYou can ask me things like:\
+      \ \n- What's my account balance? \n- Pay off my credit card \n- What did I spend\
+      \ at Target last month? \n- I need to transfer money"
 actions:
 - action_account_balance
 - action_session_start
@@ -214,7 +234,10 @@ actions:
 - action_recipients
 - action_handoff
 - action_handoff_options
-forms:
 - cc_payment_form
 - transfer_form
 - transact_search_form
+forms:
+  cc_payment_form: {}
+  transfer_form: {}
+  transact_search_form: {}
